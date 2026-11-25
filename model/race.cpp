@@ -4,7 +4,8 @@
 
 void Race::print(void){
   std::cout << "ID de raza: " << this->id << std::endl;
-  std::cout << "Nombre de raza: " << this->name << std::endl;
+  if(this->name)
+    std::cout << "Nombre de raza: " << this->name << std::endl;
 }
 
 Race::Race(){
@@ -38,5 +39,11 @@ void Race::set_id(long id){
 }
 
 void Race::set_name(char* name){
-  this->name = name;
+  if(this->name)
+    delete this->name;
+  
+  this->name = new char[strlen(name)+1];
+  
+  if(this->name)
+    strcpy(this->name, name);
 }

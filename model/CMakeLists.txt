@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
 
-add_library(model)
+add_library(model OBJECT
+  race.cpp
+)
 
-target_sources(model
-PRIVATE race.cpp
-
-PUBLIC FILE_SET HEADERS FILES race.h
+target_include_directories(model PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}
 )

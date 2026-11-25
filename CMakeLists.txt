@@ -8,7 +8,6 @@ add_executable(desupro
   main.cpp
 )
 
-target_link_libraries(desupro
-PRIVATE
+target_link_libraries(desupro PRIVATE
   model
 )
